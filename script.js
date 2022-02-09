@@ -1,4 +1,4 @@
-let count = 0;
+let count = -1;
 
 const incButton = document.getElementsByClassName("inc-btn");
 for (const inc of incButton) {
@@ -7,4 +7,15 @@ for (const inc of incButton) {
     document.getElementById("display").innerText = count;
   });
 }
-const incButton = document.getElementsByClassName("inc-btn");
+const decButton = document.getElementsByClassName("dec-btn");
+
+for (const dec of decButton) {
+  dec.addEventListener("click", function (e) {
+    if (count > 0) {
+      count--;
+    } else {
+      alert(`Can't Decrease at This Moment`);
+    }
+    document.getElementById("display").innerText = count;
+  });
+}
